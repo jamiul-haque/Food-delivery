@@ -46,6 +46,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
                     child: Icon(
                       Icons.search,
                       color: Colors.white,
+                      size: Dimensions.iconSize24,
                     ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(Dimensions.radius15),
@@ -58,7 +59,11 @@ class _MainFoodPageState extends State<MainFoodPage> {
           ),
         ),
         // Showing The Body.
-        FoodPageBody(),
+        Expanded(
+          child: SingleChildScrollView(
+            child: FoodPageBody(),
+          ),
+        ),
       ],
     ));
   }

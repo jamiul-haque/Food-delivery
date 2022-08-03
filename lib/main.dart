@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
-  // check first
 }
 
 class MyApp extends StatelessWidget {
