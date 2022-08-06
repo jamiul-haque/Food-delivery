@@ -5,6 +5,8 @@ import 'package:food_delivery_app/widgets/app_column.dart';
 import 'package:food_delivery_app/widgets/app_icon.dart';
 import 'package:food_delivery_app/widgets/big_text.dart';
 import 'package:food_delivery_app/widgets/expandable_text.dart';
+import 'package:get/get.dart';
+import '../../routes/route_helper.dart';
 
 class PopularFoodDelails extends StatelessWidget {
   const PopularFoodDelails({Key? key}) : super(key: key);
@@ -39,7 +41,11 @@ class PopularFoodDelails extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                AppIcon(icon: Icons.arrow_back_ios),
+                GestureDetector(
+                    onTap: () {
+                      Get.toNamed(RouteHelper.getInitial());
+                    },
+                    child: AppIcon(icon: Icons.arrow_back_ios)),
                 AppIcon(icon: Icons.shopping_cart_outlined),
               ],
             ),
