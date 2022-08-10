@@ -8,6 +8,8 @@ import 'package:get/get.dart';
 
 class PopularProductController extends GetxController {
   final PopularProductRepo popularProductRepo;
+
+  var recommendedProductList;
   PopularProductController({required this.popularProductRepo});
   List<ProductModel> _popularProductList = [];
   List<ProductModel> get PopularProductList => _popularProductList;
