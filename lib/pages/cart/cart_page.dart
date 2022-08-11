@@ -167,7 +167,6 @@ class CartPage extends StatelessWidget {
                                                   text: _cartList[index]
                                                       .quantity
                                                       .toString()),
-                                              // popularProduct.inCartItems.toString()),
                                               SizedBox(
                                                   width:
                                                       Dimensions.width10 / 2),
@@ -237,7 +236,7 @@ class CartPage extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
-                    // popularProduct.addItem(product);
+                    CartController.addToHostory();
                   },
                   child: Container(
                     padding: EdgeInsets.only(
