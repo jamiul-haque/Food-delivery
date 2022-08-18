@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/controllers/auth_controller.dart';
+import 'package:food_delivery_app/controllers/cart_controller.dart';
+import 'package:food_delivery_app/routes/route_helper.dart';
 import 'package:food_delivery_app/utils/colors.dart';
 import 'package:food_delivery_app/utils/dimensions.dart';
 import 'package:food_delivery_app/widgets/account_widget.dart';
 import 'package:food_delivery_app/widgets/app_icon.dart';
 import 'package:food_delivery_app/widgets/big_text.dart';
+import 'package:get/get.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({Key? key}) : super(key: key);
@@ -93,6 +97,27 @@ class AccountPage extends StatelessWidget {
                           size: Dimensions.height10 * 5,
                         ),
                         bigText: BigText(text: 'write your message here')),
+                    SizedBox(height: Dimensions.height20),
+                    // message
+                    GestureDetector(
+                      onTap: () {
+                        if (Get.find<AuthController>().UserLoggedIn()) {
+                          Get.find<AuthController>().clearSharedData();
+                          Get.find<CartController>().clear();
+                          Get.find<CartController>().clearCartHistory();
+                          Get.offAllNamed(RouteHelper.getSignInPage());
+                        }
+                      },
+                      child: AccountWidget(
+                          appIcon: AppIcon(
+                            icon: Icons.logout_outlined,
+                            backgroundColor: Colors.amber,
+                            iconColor: Colors.white,
+                            iconSize: Dimensions.height10 * 5 / 2,
+                            size: Dimensions.height10 * 5,
+                          ),
+                          bigText: BigText(text: 'Logout')),
+                    ),
                   ],
                 ),
               ),
