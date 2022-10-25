@@ -24,18 +24,17 @@ class RouteHelper {
   static String getCartPage() => '$cartPage';
   static String getSignInPage() => '$signIn';
 
-
   static List<GetPage> routes = [
     GetPage(name: splashPage, page: () => SplashScreen()),
     GetPage(
       name: initial,
-      page: () => HomePage(),
+      page: () => const HomePage(),
       transition: Transition.fadeIn,
     ),
     GetPage(
       name: signIn,
       page: () {
-        return SignInPage();
+        return const SignInPage();
       },
       transition: Transition.fadeIn,
     ),

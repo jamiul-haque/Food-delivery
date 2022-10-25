@@ -154,7 +154,7 @@ class AccountPage extends StatelessWidget {
                       children: [
                         Container(
                           width: double.maxFinite,
-                          height: Dimensions.height20 * 8,
+                          height: Dimensions.height20 * 15,
                           margin: EdgeInsets.only(
                               left: Dimensions.width20,
                               right: Dimensions.width20),
@@ -163,8 +163,7 @@ class AccountPage extends StatelessWidget {
                                   BorderRadius.circular(Dimensions.radius20),
                               image: DecorationImage(
                                   fit: BoxFit.cover,
-                                  image:
-                                      AssetImage("assets/images/logo1.gif"))),
+                                  image: AssetImage("assets/images/logo.png"))),
                         ),
                         SizedBox(height: Dimensions.height20),
                         GestureDetector(
